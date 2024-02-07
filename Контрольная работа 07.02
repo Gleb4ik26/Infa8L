@@ -1,0 +1,32 @@
+Задание №6:
+X = 0
+
+while True:
+    if (X > 3 and not (X < 4)) or (X < 1):
+        break
+    X += 1
+
+print("Наименьшее натуральное число X:", X)
+
+Задание №7:
+def sum_of_digits(n):
+    # Функция для вычисления суммы цифр числа
+    digit_sum = 0
+    while n > 0:
+        digit_sum += n % 10
+        n //= 10
+    return digit_sum
+
+sequence = [123, 456, 789, 101, 202, 303]
+max_sum = 0
+numbers = []
+
+for number in sequence:
+    current_sum = sum_of_digits(number)
+    if current_sum > max_sum:
+        max_sum = current_sum
+        numbers = [number]
+    elif current_sum == max_sum:
+        numbers.append(number)
+
+print("Числа с максимальной суммой цифр:", numbers)
